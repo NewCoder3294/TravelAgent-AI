@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Redis cache and job queue
+  redis:
+    image: redis:7-alpine
+    container_name: trip-planner-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Backend API
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: trip-planner-api
+    ports:
+      - "4000:4000"
+    environment:
+      - PARALLEL_API_KEY=${PARALLEL_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - REDIS_URL=redis://redis:6379
+      - HOST=0.0.0.0
+      - PORT=4000
+      - DEBUG=True
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src:ro
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+    driver: local
