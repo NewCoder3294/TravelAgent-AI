@@ -1,0 +1,106 @@
+"""Redis cache service for the application."""
+
+import json
+import hashlib
+from typing import Any, Optional
+import redis.asyncio as aioredis
+import structlog
+
+from ..config import settings
+
+logger = structlog.get_logger()
+
+
+class CacheService:
+    """Redis cache service with helper methods."""
+
+    def __init__(self):
+        self.redis: Optional[aioredis.Redis] = None
+
+    async def connect(self):
+        """Connect to Redis."""
+        self.redis = await aioredis.from_url(
+            settings.redis_url,
+            encoding="utf-8",
+            decode_responses=True,
+        )
+        logger.info("✅ Redis connected")
+
+    async def disconnect(self):
+        """Disconnect from Redis."""
+        if self.redis:
+            await self.redis.close()
+            logger.info("Redis disconnected")
+
+    async def get(self, key: str) -> Optional[Any]:
+        """Get cached data."""
+        try:
+            data = await self.redis.get(key)
+            return json.loads(data) if data else None
+        except Exception as e:
+            logger.error(f"Cache get error for key {key}", error=str(e))
+            return None
+
+    async def set(self, key: str, value: Any, ttl: int):
+        """Set cached data with TTL."""
+        try:
+            await self.redis.setex(key, ttl, json.dumps(value))
+        except Exception as e:
+            logger.error(f"Cache set error for key {key}", error=str(e))
+
+    async def delete(self, key: str):
+        """Delete cached data."""
+        try:
+            await self.redis.delete(key)
+        except Exception as e:
+            logger.error(f"Cache delete error for key {key}", error=str(e))
+
+    async def exists(self, key: str) -> bool:
+        """Check if key exists."""
+        try:
+            return await self.redis.exists(key) == 1
+        except Exception as e:
+            logger.error(f"Cache exists error for key {key}", error=str(e))
+            return False
+
+    # Helper methods for generating cache keys
+
+    @staticmethod
+    def flight_key(origin: str, date_hash: str) -> str:
+        """Generate cache key for flights."""
+        return f"flight:{origin}:{date_hash}"
+
+    @staticmethod
+    def destination_key(city: str, data_type: str) -> str:
+        """Generate cache key for destination data."""
+        return f"destination:{city}:{data_type}"
+
+    @staticmethod
+    def result_key(job_id: str) -> str:
+        """Generate cache key for job results."""
+        return f"result:{job_id}"
+
+    @staticmethod
+    def status_key(job_id: str) -> str:
+        """Generate cache key for job status."""
+        return f"status:{job_id}"
+
+    @staticmethod
+    def search_key(query_hash: str) -> str:
+        """Generate cache key for search deduplication."""
+        return f"search:{query_hash}"
+
+    @staticmethod
+    def date_hash(start: str, end: str) -> str:
+        """Create hash from date range."""
+        return f"{start}_{end}"
+
+    @staticmethod
+    def query_hash(data: dict) -> str:
+        """Create hash from query data."""
+        query_str = json.dumps(data, sort_keys=True)
+        return hashlib.md5(query_str.encode()).hexdigest()
+
+
+# Global cache instance
+cache = CacheService()
