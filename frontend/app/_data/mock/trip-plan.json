@@ -1,0 +1,129 @@
+{
+  "id": "trip-paris-2025",
+  "origin": "JFK",
+  "dates": { "start": "2025-06-15", "end": "2025-06-22" },
+  "budget": { "amount": 3000, "currency": "USD" },
+  "destination": {
+    "id": "paris-fr",
+    "city": "Paris",
+    "country": "France",
+    "continent": "Europe",
+    "iata": "CDG",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "avgCost": { "amount": 2800, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 650, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 180, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 75, "currency": "USD" },
+      "attractionsAvg": { "amount": 120, "currency": "USD" }
+    },
+    "highlights": [
+      "Iconic Eiffel Tower and Louvre Museum",
+      "World-class cuisine and café culture",
+      "Charming neighborhoods like Montmartre"
+    ],
+    "score": 92
+  },
+  "options": {
+    "flights": [
+      {
+        "id": "flight-1",
+        "origin": "JFK",
+        "destination": "CDG",
+        "airline": "Air France",
+        "departTime": "2025-06-15T18:30:00Z",
+        "arriveTime": "2025-06-16T08:15:00Z",
+        "durationMinutes": 465,
+        "cabin": "ECONOMY",
+        "price": { "amount": 650, "currency": "USD" }
+      },
+      {
+        "id": "flight-2",
+        "origin": "JFK",
+        "destination": "CDG",
+        "airline": "Delta",
+        "departTime": "2025-06-15T22:00:00Z",
+        "arriveTime": "2025-06-16T11:45:00Z",
+        "durationMinutes": 465,
+        "cabin": "ECONOMY",
+        "price": { "amount": 720, "currency": "USD" }
+      }
+    ],
+    "stays": [
+      {
+        "id": "stay-1",
+        "name": "Hotel Le Marais",
+        "type": "HOTEL",
+        "rating": 4.5,
+        "address": "12 Rue des Archives, 75004 Paris",
+        "lat": 48.8584,
+        "lng": 2.3558,
+        "nights": 7,
+        "priceTotal": { "amount": 1260, "currency": "USD" },
+        "amenities": ["WiFi", "Breakfast", "Air Conditioning"]
+      },
+      {
+        "id": "stay-2",
+        "name": "Montmartre Apartment",
+        "type": "APARTMENT",
+        "rating": 4.8,
+        "address": "8 Rue Lepic, 75018 Paris",
+        "lat": 48.8844,
+        "lng": 2.3356,
+        "nights": 7,
+        "priceTotal": { "amount": 980, "currency": "USD" },
+        "amenities": ["WiFi", "Kitchen", "Washer"]
+      }
+    ],
+    "foods": [
+      {
+        "id": "food-1",
+        "name": "Le Comptoir du Relais",
+        "cuisine": ["French", "Bistro"],
+        "rating": 4.6,
+        "lat": 48.8517,
+        "lng": 2.3389,
+        "typicalPricePerMeal": { "amount": 45, "currency": "USD" }
+      },
+      {
+        "id": "food-2",
+        "name": "L'As du Fallafel",
+        "cuisine": ["Middle Eastern", "Falafel"],
+        "rating": 4.4,
+        "lat": 48.8575,
+        "lng": 2.3597,
+        "typicalPricePerMeal": { "amount": 12, "currency": "USD" }
+      }
+    ],
+    "attractions": [
+      {
+        "id": "attr-1",
+        "name": "Eiffel Tower",
+        "category": "LANDMARK",
+        "lat": 48.8584,
+        "lng": 2.2945,
+        "ticketPrice": { "amount": 28, "currency": "USD" }
+      },
+      {
+        "id": "attr-2",
+        "name": "Louvre Museum",
+        "category": "MUSEUM",
+        "lat": 48.8606,
+        "lng": 2.3376,
+        "ticketPrice": { "amount": 20, "currency": "USD" }
+      },
+      {
+        "id": "attr-3",
+        "name": "Sacré-Cœur",
+        "category": "LANDMARK",
+        "lat": 48.8867,
+        "lng": 2.343,
+        "ticketPrice": { "amount": 0, "currency": "USD" }
+      }
+    ]
+  },
+  "totalMin": { "amount": 2750, "currency": "USD" },
+  "totalMax": { "amount": 3200, "currency": "USD" },
+  "rationale": "Paris offers an excellent balance of culture, cuisine, and iconic landmarks within your budget. By choosing the Montmartre apartment and mixing high-end dining with affordable street food, you can experience the best of Paris while staying under $3,000. The city's walkability and efficient metro system keep transportation costs low."
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "paris-fr",
+    "city": "Paris",
+    "country": "France",
+    "continent": "Europe",
+    "iata": "CDG",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "avgCost": { "amount": 2800, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 650, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 180, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 75, "currency": "USD" },
+      "attractionsAvg": { "amount": 120, "currency": "USD" }
+    },
+    "highlights": [
+      "Iconic Eiffel Tower and Louvre Museum",
+      "World-class cuisine and café culture",
+      "Charming neighborhoods like Montmartre"
+    ],
+    "score": 92
+  },
+  {
+    "id": "tokyo-jp",
+    "city": "Tokyo",
+    "country": "Japan",
+    "continent": "Asia",
+    "iata": "NRT",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "avgCost": { "amount": 3200, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 850, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 150, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 60, "currency": "USD" },
+      "attractionsAvg": { "amount": 100, "currency": "USD" }
+    },
+    "highlights": [
+      "Blend of traditional temples and modern tech",
+      "Incredible sushi and ramen scene",
+      "Cherry blossoms in spring"
+    ],
+    "score": 88
+  },
+  {
+    "id": "barcelona-es",
+    "city": "Barcelona",
+    "country": "Spain",
+    "continent": "Europe",
+    "iata": "BCN",
+    "lat": 41.3851,
+    "lng": 2.1734,
+    "avgCost": { "amount": 2400, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 550, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 140, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 55, "currency": "USD" },
+      "attractionsAvg": { "amount": 90, "currency": "USD" }
+    },
+    "highlights": [
+      "Gaudí's architectural masterpieces",
+      "Beautiful beaches and Mediterranean climate",
+      "Vibrant nightlife and tapas culture"
+    ],
+    "score": 90
+  },
+  {
+    "id": "bangkok-th",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "continent": "Asia",
+    "iata": "BKK",
+    "lat": 13.7563,
+    "lng": 100.5018,
+    "avgCost": { "amount": 1800, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 700, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 80, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 30, "currency": "USD" },
+      "attractionsAvg": { "amount": 50, "currency": "USD" }
+    },
+    "highlights": ["Ornate temples and Grand Palace", "Street food paradise", "Affordable luxury and shopping"],
+    "score": 85
+  },
+  {
+    "id": "new-york-us",
+    "city": "New York",
+    "country": "United States",
+    "continent": "North America",
+    "iata": "JFK",
+    "lat": 40.7128,
+    "lng": -74.006,
+    "avgCost": { "amount": 3500, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 400, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 250, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 90, "currency": "USD" },
+      "attractionsAvg": { "amount": 150, "currency": "USD" }
+    },
+    "highlights": [
+      "Iconic skyline and Central Park",
+      "World-class museums and Broadway shows",
+      "Diverse neighborhoods and cuisines"
+    ],
+    "score": 87
+  },
+  {
+    "id": "cape-town-za",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "continent": "Africa",
+    "iata": "CPT",
+    "lat": -33.9249,
+    "lng": 18.4241,
+    "avgCost": { "amount": 2200, "currency": "USD" },
+    "breakdown": {
+      "flightsFromOriginMin": { "amount": 900, "currency": "USD" },
+      "stayPerNightAvg": { "amount": 110, "currency": "USD" },
+      "foodPerDayAvg": { "amount": 45, "currency": "USD" },
+      "attractionsAvg": { "amount": 80, "currency": "USD" }
+    },
+    "highlights": [
+      "Table Mountain and stunning coastline",
+      "Wine country and safari opportunities",
+      "Rich cultural history"
+    ],
+    "score": 86
+  }
+]
